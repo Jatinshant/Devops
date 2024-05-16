@@ -1,0 +1,88 @@
+Git: Git is a distributed version control system that helps us to track changes in code. It is popular,free and open source, fast and scalable.
+
+Github: Github is a website that allows developers to store and manage their code using git.
+Github account
+Create a new repository
+make our first commit
+
+README.md file: In READEME.md file we give the discription about our project.(md=> markdown)
+
+Configuration git:  (gitconfig --global user.name"MY NAME"
+                    gitconfig --global user.email"abc@gmail.com"
+                    git config --list)
+
+init: It is used to create a new git repo.
+(git init)
+(git remote add origin <link>)
+(git remote -v) to verify remote
+
+Clone and Status: 
+clone:- cloning a repository from remote server to local machine.
+(git clone <some link>)
+
+status: display the state of a file.
+(git status)
+
+Untracked: New file that git doesn't yet track.
+
+Modified: chnaged.
+
+Staged: file is ready for committed.
+
+Unmodified: unchanged.
+
+Add and Commit: 
+add: adds new or changed files in your working directory to the git staging area.
+(git add <file name>)
+
+for stage multiple file
+(git add.)
+
+For unstage file:  git restore --staged filename
+
+commit: it is the record of change
+(git commit -m "some message")
+
+push: upload local repo content to remote repo.
+(git push origin main)
+
+Work Flow:  github-repo ---> clone ---> changes ---> add ---> commit ---> push
+
+Git Branches: In github, branches refers to separate line of development with in a git repository.
+
+branch commands:
+git branch (to check branch)
+git branch -M main (to rename branch)
+git checkout <brnach name> (to navigate)
+git checkout -b <new branch name> (to create new branch)
+git branch -d <branch name> (to delete branch)
+
+Merging code: 
+way-1: git diff <branch name> (to compare commits, branches, files and more)
+       git merge <branch name> (to merge 2 branches)
+
+way-2: Create a PR(pull request)
+
+pull request: It lets you tell about changes you've pushed to a branch in a repository on github.
+
+pull command: Used to fetch and download content from a repo and immediatly update the local repo to match that content.
+(git pull origin main)
+
+Resolving merge conflicts: An event that take place when git is unable to automatically resolve difference in code between two commmits.
+
+# git log command is use to find our commits or commit hash 
+
+Undoing Changes: 
+Case-1: staged chnages
+(git reset <filename>)
+(git reset)
+
+Case-2: Commited changes for one commit.
+(git reset HEAD~1)
+
+Case-3: Commited chnages for many commits.
+(git reset <commit hash>) 
+(git reset --hard <commit hash>)
+
+Fork: A fork is a new repository that shares code and visibility settings with the original upstream repository.
+fork is a rough copy.
