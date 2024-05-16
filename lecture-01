@@ -1,6 +1,6 @@
 Date: 14-05-2024
 What is devops?
-Ans: Devops is the combination of cultural philosophies, practice and tools that increase an organization aboility to deliver applications and service at high velocity.
+Ans: Devops is the combination of cultural philosophies, practice and tools that increase an organization ability to deliver applications and service at high velocity.
 
 LifeCycle of Devops?
 Ans: Devops is the set of phase that includes Devops for taking part in Developent and operation groups for quick software programe deliver. Devops follows positive techniques that consist of code, building, testting, relasing, deploying, operating, displaying and planning.
@@ -9,4 +9,7 @@ what is monolithic architecture and microservices?
 Ans: A monolithic application is built as a single unified unit while a microservices architecture is a collection of smaller, independently deployable services.
 
 what is services in Devops?
-Ans: DevOps as a service relies on infrastructure-as-code to quickly replace and address issues with virtual infrastructure. 
+Ans: DevOps as a service relies on infrastructure-as-code to quickly replace and address issues with virtual infrastructure. (package of code that is deploy on a tool is known as service)
+
+what is microservice?
+Ans: package of different diffferent code.
