@@ -1,0 +1,106 @@
+What is Docker?
+Ans: Docker is a  comtainerization platform for developing, packaging, shipping and running applications.
+-> It provide the ability to run an application is an isolated environment called a container.
+-> Makes deployment and development.
+
+What is a Container?
+Ans: A way of package an application with all the necessary dependencies and configuration.
+-> It can be easily shared.
+
+Difference between Docker and VMs?\
+Ans: Docker container:
+-> Low impact on OS, very fast, low disk space usage.
+-> Sharing, re-building and distribution is easy.
+-> Encapsulate apps instead of whole machine.
+VMs:
+-> High impact on OS, slower, high disk space usage.
+-> Sharing, re-building and distribution is challenging.
+-> Encapsulate whole machine.
+
+Main Component of docker:
+1. Dockerfile: It is a simple text file with instaructions to build an image & applications.
+2. Dockerimage: Single file with all the dependencies and liberaries to run the program.
+3. Docker container
+4. Docker registry: A docker registry is a central repository for storing and distributing docker images.
+
+Commands:
+1. docker image: This command is useed to see all the images.
+
+2. docker run <imaage name>: THis command is used to run docker images.
+
+3. docker run -d <image name>: This is use for run the image in the background.
+
+4. docker ps: This is use to check that image is running or not.
+
+5. docker stop <container name>: Use to stop the contianer.
+
+6. docker ps -a: It is use to see the stop container is present in our memory or not.
+
+7. docker start <container name>: Use to start the container.
+
+8. docker remove <container id>or<contianer name>: It is used to remove the container from the memory.
+
+9. docker remove -f <contianer name>: It is used to remove the container forefully and it is automatically stop.
+
+10. docker run --name <"give any name"> <image name>: --name command is used to give the container name.
+
+11. docker run -d -p 8080:80 <image name>: -p command is use for port binding.
+
+12. docker logs <container name>: To see logs of running container in the background.
+
+13. docker logs -f <container name>: To see live logs.
+
+14. docker attach <container name>: TO make the container process foreground pr in attach mode.
+
+15. docker inspect <container name>: It will show all the details about thr contianer like ip address, port and etc.
+
+16. docker exec -it <conatiner name> <which action>: exec(execute), it(interactive mode) It is used to make some change in the container.
+
+17. docker cp <file name> <container name>:/<path> : TO copy file from local to conatiner.
+
+18. docker cp <container name>: /<file name> : To copy file from container to local.
+
+# Dockerfile: example->
+FROM node
+
+WROKDIR /app
+
+COPY . .
+
+RUN npm install
+
+CMD ["node", "app.js"]
+
+# Docker VOlume:
+-> To create docker volume
+    docker volume create my-vol
+
+-> List Volumes
+   docker volume ls
+
+-> Remove a volume
+   docker volume rm my-vol
+
+-> Docker volume create and attach with image
+   docker run -d -v <name>:<container path location> --name <name> <image name>
+Ex:
+docker run -d --rm -v myapp:/app --name myapp -p 8080:3030 email-submit:01
+
+# bind-mount docker volume:
+Syntax: 
+docker run -d -v <copy path of your local file>:<container path location> <image name>
+Ex:
+docker run -d -v /users/asus/desktop/nodejs/email.txt:/app/ -p 8080:3030 email-submit:01
+
+# docker Network:
+-> To create docker network
+   docker network create my-net
+
+-> To list network
+   docker network ls
+
+-> To remove docker network
+    docker network rm my-net
+
+-> docker run --network my-net -d <image name>
+-> Then we need to attach that "my-net" network with other image and we go to interactive mode of other image and in interactive mode we use ping command to see that we successfully establish connection.
